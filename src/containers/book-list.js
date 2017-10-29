@@ -1,13 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import selectBook from '../actions/index';
+import { selectBook } from '../actions/index';
 import {bindActionCreators} from 'redux';
 
  class BookList extends React.Component {
     renderList(){
         return this.props.books.map((book) => {
             return(
-                <li key={book.title} className="list-group-item">{book.title}</li>
+                <li
+                    onClick= {()=> {this.props.selectBook(book)}}
+                    key={book.title}
+                    className="list-group-item">
+                    {book.title}
+                </li>
             );
         });
     }
