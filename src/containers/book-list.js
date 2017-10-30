@@ -8,7 +8,7 @@ import {bindActionCreators} from 'redux';
         return this.props.books.map((book) => {
             return(
                 <li
-                    onClick= {()=> {this.props.selectBook(book)}}
+                    onMouseOver= {()=> {this.props.selectBook(book)}}
                     key={book.title}
                     className="list-group-item">
                     {book.title}
